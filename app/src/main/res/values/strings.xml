@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinMPP</string>
+    <string name="generatePassword">New Password</string>
 </resources>

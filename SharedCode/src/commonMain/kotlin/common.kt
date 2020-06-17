@@ -6,6 +6,6 @@ fun createApplicationScreenMessage(): String {
     return "Kotlin Rocks on ${platformName()}"
 }
 
-fun readExif() {
-    Exif
+fun generatePassword() : String {
+    return "password"
 }

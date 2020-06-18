@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,56 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is where the password will go" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3l4-rD-TUL">
+                                <rect key="frame" x="3" y="170" width="409" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="589-qC-bb6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-9s-Sqe">
+                                <rect key="frame" x="100" y="538" width="218" height="20"/>
+                                <accessibility key="accessibilityConfiguration" identifier="generatePasswordButton" label="Generate Password"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="213" id="cvZ-FN-f9r"/>
+                                    <constraint firstAttribute="height" constant="20" id="eIb-Ww-C9T"/>
+                                </constraints>
+                                <state key="normal" title="Generate Password"/>
+                                <connections>
+                                    <action selector="generatePasswordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZXE-k2-IkK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="3l4-rD-TUL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Mv-zY-zVF"/>
+                            <constraint firstItem="AaP-9s-Sqe" firstAttribute="centerX" secondItem="3l4-rD-TUL" secondAttribute="centerX" id="7hp-yv-vgb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AaP-9s-Sqe" secondAttribute="bottom" constant="79" id="GZu-ZZ-kD5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AaP-9s-Sqe" secondAttribute="trailing" constant="100" id="NcC-ha-dqo"/>
+                            <constraint firstItem="AaP-9s-Sqe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ssz-nf-byg"/>
+                            <constraint firstItem="3l4-rD-TUL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="127" id="VtN-XY-KMk"/>
+                            <constraint firstItem="3l4-rD-TUL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-57" id="caD-sY-QUM"/>
+                            <constraint firstItem="AaP-9s-Sqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="joO-Ab-Y5J"/>
+                            <constraint firstItem="AaP-9s-Sqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="nok-BD-0EC"/>
+                            <constraint firstItem="AaP-9s-Sqe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="nro-PX-tLQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AaP-9s-Sqe" secondAttribute="bottom" constant="304" id="o76-hU-qRJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Orange"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="3l4-rD-TUL" id="Drs-Ws-gNW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

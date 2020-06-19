@@ -34,6 +34,8 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize"
             android:paddingBottom="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             tools:context=".MainActivity">
 
             <TextView

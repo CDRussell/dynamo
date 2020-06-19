@@ -11,8 +11,6 @@
             android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" android:label="@string/dynamo">
 
-            change title color to white?
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

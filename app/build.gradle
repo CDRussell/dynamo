@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 30
     defaultConfig {
-        applicationId "com.jetbrains.handson.mpp.mobile"
+        applicationId "com.cdrussell.dynamo.android"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -17,7 +17,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 

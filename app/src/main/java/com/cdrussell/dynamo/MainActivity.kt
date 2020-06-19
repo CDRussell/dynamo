@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile
+package com.cdrussell.dynamo
 
 import android.content.ClipData
 import android.content.ClipboardManager
@@ -18,6 +18,7 @@ import com.cdrussell.dynamo.PasswordGenerator.PasswordResult.PasswordSuccess
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.jetbrains.handson.mpp.mobile.R
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -126,7 +127,8 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val clip = ClipData.newPlainText("password", this)
         clipboard.setPrimaryClip(clip)
 
-        Snackbar.make(bottomBar, R.string.copiedToClipboard, Snackbar.LENGTH_SHORT).also { snackbar ->
+        Snackbar.make(bottomBar,
+            R.string.copiedToClipboard, Snackbar.LENGTH_SHORT).also { snackbar ->
             snackbar.anchorView = bottomBar
         }.show()
     }

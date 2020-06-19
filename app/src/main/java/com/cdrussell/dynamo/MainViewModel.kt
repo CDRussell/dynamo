@@ -1,9 +1,8 @@
-package com.jetbrains.handson.mpp.mobile
+package com.cdrussell.dynamo
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cdrussell.dynamo.PasswordGenerator
 import com.cdrussell.dynamo.PasswordGenerator.PasswordResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

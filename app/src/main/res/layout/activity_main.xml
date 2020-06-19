@@ -11,7 +11,7 @@
         android:id="@+id/parentCoordinator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".MainActivity">
+        tools:context="com.cdrussell.dynamo.MainActivity">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -36,7 +36,7 @@
             android:paddingBottom="20dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
-            tools:context=".MainActivity">
+            tools:context="com.cdrussell.dynamo.MainActivity">
 
             <TextView
                 android:id="@+id/generatedPasswordText"

@@ -29,17 +29,6 @@ class PasswordGenerator {
             if (passwordConfiguration.specialCharacterLetterType.included) it.addAll(asciiSpecialCharacters)
         }
 
-        var uppercaseCount = 0
-        var lowercaseCount = 0
-        var numberCount = 0
-        var specialCharacterCount = 0
-        var password = ""
-
-//        while (password.length < passwordConfiguration.requiredLength) {
-//            val char = characterCandidates.randomCharacter()
-//            password +=
-//        }
-
         for (i in 0 until passwordConfiguration.requiredLength) {
             sb.append(characterCandidates.randomCharacter())
         }

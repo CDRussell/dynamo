@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">KotlinMPP</string>
     <string name="generatePassword">New Password</string>
+    <string name="passwordLengthLabel">Length</string>
+    <string name="useNumbersLabel">Numbers</string>
+    <string name="useUppercaseLabel">Uppercase</string>
+    <string name="useLowercaseLabel">Lowercase</string>
+    <string name="useSpecialCharactersLabel">Special Characters</string>
+    <string name="newPasswordLabel">Generate</string>
+    <string name="copyPassword">Copy</string>
+    <string name="copiedToClipboard">Copied to clipboard</string>
+    <string name="dynamo">Dynamo</string>
 </resources>

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is where the password will go" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3l4-rD-TUL">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This is where the password will go" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3l4-rD-TUL">
                                 <rect key="frame" x="3" y="170" width="409" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="122" id="589-qC-bb6"/>
@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-9s-Sqe">
-                                <rect key="frame" x="100" y="538" width="218" height="20"/>
+                                <rect key="frame" x="100" y="538" width="214" height="20"/>
                                 <accessibility key="accessibilityConfiguration" identifier="generatePasswordButton" label="Generate Password"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="213" id="cvZ-FN-f9r"/>

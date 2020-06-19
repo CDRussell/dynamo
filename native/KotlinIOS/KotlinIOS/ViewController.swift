@@ -23,15 +23,18 @@ class ViewController: UIViewController {
 //        label.text = CommonKt.createApplicationScreenMessage()
 //        view.addSubview(label)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(copyPassword(sender:)))
+        passwordField.addGestureRecognizer(tap)
+        
        generatePassword()
     }
     
     func generatePassword() {
        let config = PasswordGenerator.PasswordConfiguration(requiredLength:12,
-                                                            numericalType: PasswordGenerator.NumericalType(included: true, minimumCharacters: 0),
-                                                            upperCaseLetterType: PasswordGenerator.UpperCaseLetterType(included: true, minimumCharacters: 0),
-                                                            lowerCaseLetterType: PasswordGenerator.LowerCaseLetterType(included: true, minimumCharacters: 0),
-                                                            specialCharacterLetterType: PasswordGenerator.SpecialCharacterLetterType(included: true, minimumCharacters: 0))
+                                                            numericalType: PasswordGenerator.NumericalType(included: true),
+                                                            upperCaseLetterType: PasswordGenerator.UpperCaseLetterType(included: true ),
+                                                            lowerCaseLetterType: PasswordGenerator.LowerCaseLetterType(included: true),
+                                                            specialCharacterLetterType: PasswordGenerator.SpecialCharacterLetterType(included: true))
        
        let result = PasswordGenerator().generatePassword(passwordConfiguration: config)
        
@@ -40,5 +43,12 @@ class ViewController: UIViewController {
        } else if let result = result as? PasswordFailure {
            passwordField.text = result.exception.message
        }
+    }
+    
+    @objc func copyPassword(sender: UITapGestureRecognizer) {
+        UIPasteboard.general.string = passwordField.text
+        if let output = UIPasteboard.general.string {
+            print("Copied \(output)")
+        }
     }
 }

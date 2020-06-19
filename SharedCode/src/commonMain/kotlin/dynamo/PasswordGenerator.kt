@@ -103,31 +103,16 @@ class PasswordGenerator {
 
     data class SelectedCharacter(val character: Char, val type: CharacterType)
 
-    abstract class CharacterType(open val included: Boolean, open val minimumCharacters: Int)
+    abstract class CharacterType(open val included: Boolean)
 
-    data class NumericalType(
-        override val included: Boolean,
-        override val minimumCharacters: Int = 0
-    ) : CharacterType(included, minimumCharacters)
-
-    data class UpperCaseLetterType(
-        override val included: Boolean,
-        override val minimumCharacters: Int = 2
-    ) : CharacterType(included, minimumCharacters)
-
-    data class LowerCaseLetterType(
-        override val included: Boolean,
-        override val minimumCharacters: Int = 2
-    ) : CharacterType(included, minimumCharacters)
-
-    data class SpecialCharacterLetterType(
-        override val included: Boolean,
-        override val minimumCharacters: Int = 2
-    ) : CharacterType(included, minimumCharacters)
+    data class NumericalType(override val included: Boolean) : CharacterType(included)
+    data class UpperCaseLetterType(override val included: Boolean) : CharacterType(included)
+    data class LowerCaseLetterType(override val included: Boolean) : CharacterType(included)
+    data class SpecialCharacterLetterType(override val included: Boolean) : CharacterType(included)
 
     private fun CharacterType.minimumCharactersRequired(): Int {
         if (!this.included) return 0
-        return this.minimumCharacters
+        return 1
     }
 
     private fun PasswordConfiguration.characterTypesAvailable(): Boolean {

@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         restoreUiPreferences()
         configureUiEventHandlers()
         configureViewStateObserver()
+    }
+
+    override fun onStart() {
+        super.onStart()
         generateNewPassword()
     }
 

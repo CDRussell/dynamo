@@ -4,6 +4,8 @@ plugins {
     kotlin("multiplatform")
 }
 
+configurations.create("compileClasspath")
+
 kotlin {
     //select iOS target platform depending on the Xcode environment variables
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -26,9 +28,13 @@ kotlin {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
     }
 
+//    sourceSets["commonTest"].dependencies {
+//        implementation(kotlin("test-common"))
+//        implementation(kotlin("test-annotations-common"))
+//    }
+
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
-        implementation("org.apache.commons:commons-imaging:1.0-alpha1")
     }
 }
 

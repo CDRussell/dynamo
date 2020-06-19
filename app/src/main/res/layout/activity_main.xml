@@ -25,6 +25,7 @@
             android:id="@+id/newPasswordButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:fabCustomSize="70dp"
             android:src="@drawable/ic_autorenew_black_24dp"
             app:layout_anchor="@id/bottomAppBar" />
 
@@ -33,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="?attr/actionBarSize"
-            android:paddingBottom="20dp"
+            android:paddingBottom="30dp"
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
             tools:context="com.cdrussell.dynamo.MainActivity">

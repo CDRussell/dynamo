@@ -50,7 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		47729E0222F447C800B9B36B /* KotlinIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotlinIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47729E0222F447C800B9B36B /* Dynamo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dynamo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47729E0522F447C800B9B36B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47729E0722F447C800B9B36B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47729E0A22F447C800B9B36B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		47729E0322F447C800B9B36B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47729E0222F447C800B9B36B /* KotlinIOS.app */,
+				47729E0222F447C800B9B36B /* Dynamo.app */,
 				47729E1622F447CA00B9B36B /* KotlinIOSTests.xctest */,
 				47729E2122F447CA00B9B36B /* KotlinIOSUITests.xctest */,
 			);
@@ -163,7 +163,7 @@
 			);
 			name = KotlinIOS;
 			productName = KotlinIOS;
-			productReference = 47729E0222F447C800B9B36B /* KotlinIOS.app */;
+			productReference = 47729E0222F447C800B9B36B /* Dynamo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		47729E1522F447CA00B9B36B /* KotlinIOSTests */ = {
@@ -480,8 +480,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jetbrains.handson.mpp.mobile.KotlinIOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdrussell.dynamo.ios;
+				PRODUCT_NAME = Dynamo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -498,8 +498,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jetbrains.handson.mpp.mobile.KotlinIOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cdrussell.dynamo.ios;
+				PRODUCT_NAME = Dynamo;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -21,14 +21,9 @@ class PasswordGenerator {
             return PasswordFailure(IllegalArgumentException("$minimumCharactersToSatisfyEachConstraint characters required to match subtypes, but total password length is too short: ${passwordConfiguration.requiredLength}"))
         }
 
-        val sb = StringBuilder()
-        val characterCandidates = mutableListOf<Char>().also {
-            if (passwordConfiguration.numericalType.included) it.addAll(asciiNumbers)
-            if (passwordConfiguration.upperCaseLetterType.included) it.addAll(asciiUppercaseLetters)
-            if (passwordConfiguration.lowerCaseLetterType.included) it.addAll(asciiLowercaseLetters)
-            if (passwordConfiguration.specialCharacterLetterType.included) it.addAll(asciiSpecialCharacters)
-        }
+        val characterCandidates = initializeAvailableCharacters(passwordConfiguration)
 
+        val sb = StringBuilder()
         for (i in 0 until passwordConfiguration.requiredLength) {
             sb.append(characterCandidates.randomCharacter())
         }
@@ -36,17 +31,15 @@ class PasswordGenerator {
         return PasswordSuccess(sb.toString())
     }
 
-    private fun calculateMinimumCharactersFromCriteria(passwordConfiguration: PasswordConfiguration): Int {
-        val minimumCharactersToSatisfyEachConstraint = 0 +
-                passwordConfiguration.numericalType.minimumCharactersRequired() +
-                passwordConfiguration.lowerCaseLetterType.minimumCharactersRequired() +
-                passwordConfiguration.upperCaseLetterType.minimumCharactersRequired() +
-                passwordConfiguration.specialCharacterLetterType.minimumCharactersRequired()
-        return minimumCharactersToSatisfyEachConstraint
+    private fun initializeAvailableCharacters(passwordConfiguration: PasswordConfiguration): MutableList<Char> {
+        val characterCandidates = mutableListOf<Char>().also {
+            if (passwordConfiguration.numericalType.included) it.addAll(asciiNumbers)
+            if (passwordConfiguration.upperCaseLetterType.included) it.addAll(asciiUppercaseLetters)
+            if (passwordConfiguration.lowerCaseLetterType.included) it.addAll(asciiLowercaseLetters)
+            if (passwordConfiguration.specialCharacterLetterType.included) it.addAll(asciiSpecialCharacters)
+        }
+        return characterCandidates
     }
-
-    // This should really use a `SecureRandom` equivalent but that's not available for Kotlin MPP currently
-    private fun MutableList<Char>.randomCharacter() = this[Random.nextInt(this.size)]
 
     private fun initialiseNumbers(): List<Char> {
         return initialiseAsciiRange(48, 57)
@@ -76,6 +69,18 @@ class PasswordGenerator {
         }
         return list.toList()
     }
+
+    private fun calculateMinimumCharactersFromCriteria(passwordConfiguration: PasswordConfiguration): Int {
+        val minimumCharactersToSatisfyEachConstraint = 0 +
+                passwordConfiguration.numericalType.minimumCharactersRequired() +
+                passwordConfiguration.lowerCaseLetterType.minimumCharactersRequired() +
+                passwordConfiguration.upperCaseLetterType.minimumCharactersRequired() +
+                passwordConfiguration.specialCharacterLetterType.minimumCharactersRequired()
+        return minimumCharactersToSatisfyEachConstraint
+    }
+
+    // This should really use a `SecureRandom` equivalent but that's not available for Kotlin MPP currently
+    private fun MutableList<Char>.randomCharacter() = this[Random.nextInt(this.size)]
 
     sealed class PasswordResult {
         data class PasswordSuccess(val password: String) : PasswordResult()
